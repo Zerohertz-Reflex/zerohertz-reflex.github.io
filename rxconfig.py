@@ -1,5 +1,3 @@
 import reflex as rx
 
-config = rx.Config(
-    app_name="zerohertz",
-)
+config = rx.Config(app_name="app", frontend_path="/reflex")
