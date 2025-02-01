@@ -5,6 +5,7 @@ import reflex as rx
 from rxconfig import config
 
 
+@rx.page()
 def index() -> rx.Component:
     # Welcome Page (Index)
     return rx.container(
@@ -29,5 +30,14 @@ def index() -> rx.Component:
     )
 
 
+@rx.page("test")
+def test():
+    return rx.text("test")
+
+
+@rx.page("test2")
+def test2():
+    return rx.text("test2")
+
+
 app = rx.App()
-app.add_page(index)
