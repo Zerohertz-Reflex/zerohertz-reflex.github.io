@@ -1,7 +1,9 @@
 [project]
-name = "reflex-cookbook"
+name = "zerohertz-reflex"
 version = "0.1.0"
-description = "Add your description here"
+description = ""
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "reflex>=0.6.8",
+]
