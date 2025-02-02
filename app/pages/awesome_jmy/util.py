@@ -101,7 +101,7 @@ class DataLoader:
 graph = """
 @template(route="/awesome-jmy/{idx}", title="{name}")
 def awesome_jmy_{idx}():
-    path = "/Users/zerohertz/Downloads/awesome-jmy/prop/time/data/"
+    path = "awesome-jmy/prop/time/data/"
     name = "{name}"
     return graph(path, name)
 """

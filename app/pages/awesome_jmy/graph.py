@@ -92,24 +92,3 @@ def graph(path, name):
         ),
         width="100%",
     )
-
-
-@template(route="/awesome-jmy/1384", title="서울대학교대학원")
-def awesome_jmy_1384():
-    path = "/Users/zerohertz/Downloads/awesome-jmy/prop/time/data/"
-    name = "서울대학교대학원"
-    return graph(path, name)
-
-
-@template(route="/awesome-jmy/1771", title="한국과학기술원")
-def awesome_jmy_1771():
-    path = "/Users/zerohertz/Downloads/awesome-jmy/prop/time/data/"
-    name = "한국과학기술원"
-    return graph(path, name)
-
-
-@template(route="/awesome-jmy/1738", title="포항공과대학교대학원")
-def awesome_jmy_1738():
-    path = "/Users/zerohertz/Downloads/awesome-jmy/prop/time/data/"
-    name = "포항공과대학교대학원"
-    return graph(path, name)
