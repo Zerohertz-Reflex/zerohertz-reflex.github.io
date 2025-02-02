@@ -7,11 +7,6 @@ def menu_item_icon(icon: str) -> rx.Component:
 
 
 def menu_item(text: str, url: str) -> rx.Component:
-    # Whether the item is active.
-    active = (rx.State.router.page.path == url.lower()) | (
-        (rx.State.router.page.path == "/") & text == "Overview"
-    )
-
     return rx.link(
         rx.hstack(
             rx.match(
@@ -24,30 +19,30 @@ def menu_item(text: str, url: str) -> rx.Component:
                 menu_item_icon("layout-dashboard"),
             ),
             rx.text(text, size="4", weight="regular"),
-            color=rx.cond(
-                active,
-                styles.accent_text_color,
-                styles.text_color,
-            ),
+            # color=rx.cond(
+            #     active,
+            #     styles.accent_text_color,
+            #     styles.text_color,
+            # ),
             style={
                 "_hover": {
-                    "background_color": rx.cond(
-                        active,
-                        styles.accent_bg_color,
-                        styles.gray_bg_color,
-                    ),
-                    "color": rx.cond(
-                        active,
-                        styles.accent_text_color,
-                        styles.text_color,
-                    ),
+                    # "background_color": rx.cond(
+                    #     active,
+                    #     styles.accent_bg_color,
+                    #     styles.gray_bg_color,
+                    # ),
+                    # "color": rx.cond(
+                    #     active,
+                    #     styles.accent_text_color,
+                    #     styles.text_color,
+                    # ),
                     "opacity": "1",
                 },
-                "opacity": rx.cond(
-                    active,
-                    "1",
-                    "0.95",
-                ),
+                # "opacity": rx.cond(
+                #     active,
+                #     "1",
+                #     "0.95",
+                # ),
             },
             align="center",
             border_radius=styles.border_radius,
