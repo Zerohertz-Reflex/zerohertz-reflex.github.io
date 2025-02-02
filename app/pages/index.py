@@ -6,21 +6,17 @@ from app.templates.template import template
 def index() -> rx.Component:
     return rx.container(
         rx.vstack(
-            rx.image("./zerohertz-black-red.png"),
-            rx.heading("Welcome to Reflex!", size="9"),
-            rx.text(
-                "Get started by editing ",
-                rx.code("app"),
-                size="5",
-            ),
+            rx.image("./logo.png"),
+            rx.heading("⚡️ Zerohertz's Reflex Application ⚡️", align="center"),
             rx.link(
-                rx.button("Check out our docs!"),
-                href="https://reflex.dev/docs/getting-started/introduction/",
+                rx.button("Source Code"),
+                href="https://github.com/Zerohertz-Reflex/zerohertz-reflex.github.io",
                 is_external=True,
+                align="center",
             ),
-            spacing="5",
+            align="center",
             justify="center",
             min_height="85vh",
+            spacing="9",
         ),
-        rx.logo(),
     )
