@@ -12,37 +12,17 @@ def menu_item(text: str, url: str) -> rx.Component:
             rx.match(
                 text,
                 ("Home", menu_item_icon("home")),
-                ("Table", menu_item_icon("table-2")),
-                ("About", menu_item_icon("book-open")),
-                ("Profile", menu_item_icon("user")),
-                ("Settings", menu_item_icon("settings")),
+                ("Awesome JMY", menu_item_icon("graduation-cap")),
                 menu_item_icon("layout-dashboard"),
             ),
             rx.text(text, size="4", weight="regular"),
-            # color=rx.cond(
-            #     active,
-            #     styles.accent_text_color,
-            #     styles.text_color,
-            # ),
+            color=styles.accent_text_color,
             style={
                 "_hover": {
-                    # "background_color": rx.cond(
-                    #     active,
-                    #     styles.accent_bg_color,
-                    #     styles.gray_bg_color,
-                    # ),
-                    # "color": rx.cond(
-                    #     active,
-                    #     styles.accent_text_color,
-                    #     styles.text_color,
-                    # ),
+                    "background_color": styles.accent_bg_color,
                     "opacity": "1",
                 },
-                # "opacity": rx.cond(
-                #     active,
-                #     "1",
-                #     "0.95",
-                # ),
+                "opacity": "1",
             },
             align="center",
             border_radius=styles.border_radius,
@@ -59,19 +39,19 @@ def menu_item(text: str, url: str) -> rx.Component:
 def navbar_footer() -> rx.Component:
     return rx.hstack(
         rx.link(
-            rx.text("Docs", size="3"),
-            href="https://reflex.dev/docs/getting-started/introduction/",
+            rx.icon("github", size=18),
+            href="https://github.com/Zerohertz",
             color_scheme="gray",
             underline="none",
+            target="_blank",
         ),
         rx.link(
-            rx.text("Blog", size="3"),
-            href="https://reflex.dev/blog/",
+            rx.icon("rss", size=18),
+            href="https://zerohertz.github.io/",
             color_scheme="gray",
             underline="none",
+            target="_blank",
         ),
-        rx.spacer(),
-        rx.color_mode.button(style={"opacity": "0.8", "scale": "0.95"}),
         justify="start",
         align="center",
         width="100%",
@@ -84,14 +64,9 @@ def menu_button() -> rx.Component:
 
     ordered_page_routes = [
         "/",
-        "/table",
-        "/about",
-        "/profile",
-        "/settings",
+        "/awesome-jmy",
     ]
-
     pages = get_decorated_pages()
-
     ordered_pages = sorted(
         pages,
         key=lambda page: (
@@ -100,7 +75,6 @@ def menu_button() -> rx.Component:
             else len(ordered_page_routes)
         ),
     )
-
     return rx.drawer.root(
         rx.drawer.trigger(
             rx.icon("align-justify"),
@@ -124,6 +98,7 @@ def menu_button() -> rx.Component:
                             url=page["route"],
                         )
                         for page in ordered_pages
+                        if page["route"].count("/") < 2
                     ],
                     rx.spacer(),
                     navbar_footer(),
@@ -146,18 +121,16 @@ def menu_button() -> rx.Component:
 def navbar() -> rx.Component:
     return rx.el.nav(
         rx.hstack(
-            # rx.color_mode_cond(
-            #     rx.image(src="/reflex_black.svg", height="1em"),
-            #     rx.image(src="/reflex_white.svg", height="1em"),
-            # ),
+            rx.image("/favicon.ico", height="1.5em"),
             rx.spacer(),
+            rx.color_mode.button(style={"opacity": "0.8", "scale": "0.95"}),
             menu_button(),
             align="center",
             width="100%",
             padding_y="1.25em",
             padding_x=["1em", "1em", "2em"],
         ),
-        display=["block", "block", "block", "block", "block", "none"],
+        display=["block", "block", "block", "block", "block", "block"],
         position="sticky",
         background_color=rx.color("gray", 1),
         top="0px",

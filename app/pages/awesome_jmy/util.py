@@ -128,7 +128,5 @@ if __name__ == "__main__":
             b3,
             t1,
             t2,
-        ) in dataloader_all.ranked_data_org.values[:3]:
-            print(idx)
-            print(graph.format(idx=idx, name=name))
+        ) in dataloader_all.ranked_data_org.values[:200]:
             file.write(graph.format(idx=idx, name=name))

@@ -6,7 +6,7 @@ from app.templates.template import template
 def index() -> rx.Component:
     return rx.container(
         rx.vstack(
-            # rx.image("./zerohertz-black-red.png"),
+            rx.image("./zerohertz-black-red.png"),
             rx.heading("Welcome to Reflex!", size="9"),
             rx.text(
                 "Get started by editing ",

@@ -2,7 +2,6 @@ from typing import Callable
 
 import reflex as rx
 from app.components.navbar import navbar
-from app.components.sidebar import sidebar
 from app.styles import styles
 from app.styles.theme import theme_config
 
@@ -29,7 +28,6 @@ def template(
         def templated_page():
             return rx.flex(
                 navbar(),
-                sidebar(),
                 rx.flex(
                     rx.vstack(
                         page_content(),
@@ -54,7 +52,7 @@ def template(
                     "column",
                     "column",
                     "column",
-                    "row",
+                    "column",
                 ],
                 width="100%",
                 margin="auto",

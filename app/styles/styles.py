@@ -1,5 +1,3 @@
-from pydantic import BaseModel
-
 import reflex as rx
 
 border_radius = "var(--radius-2)"
@@ -15,7 +13,7 @@ hover_accent_bg = {"_hover": {"background_color": accent_color}}
 content_width_vw = "90vw"
 sidebar_width = "32em"
 sidebar_content_width = "16em"
-max_width = "3000px"
+max_width = "5000px"
 color_box_size = ["2.25rem", "2.25rem", "2.5rem"]
 
 
@@ -91,12 +89,12 @@ color_picker_style = {
 
 
 base_stylesheets = [
-    "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap",
     "styles.css",
 ]
 
 base_style = {
-    "font_family": "Inter",
+    "font_family": "Times New Roman",
+    "font_size": "0.9rem",
 }
 
 
